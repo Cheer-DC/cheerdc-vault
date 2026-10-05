@@ -1,0 +1,852 @@
+/* ==========================================================================
+   CHEER DC - QUICK REFERENCE VAULT
+   Athletic, Mobile-First Stylesheet
+   Branding: Columbia Blue Canvas, Cheer DC Deep Navy, Crisp White
+   Typography: Cornero Display Typeface for Big Titles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Font Definitions & Typeface Fallbacks
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Cornero';
+  src: local('Cornero'),
+       local('Cornero Regular'),
+       local('Cornero Bold'),
+       local('Cornero-Regular'),
+       local('Cornero-Bold'),
+       url('cornero.otf') format('opentype'),
+       url('cornero.ttf') format('truetype'),
+       url('fonts/cornero.otf') format('opentype'),
+       url('fonts/cornero.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Cheer DC Official Brand Palette */
+  --color-columbia-blue: #75B2DD;       /* Official Columbia Blue (Pantone 292) */
+  --color-columbia-dark: #5B9EC9;
+  --color-columbia-light: #9CD5F8;
+  --color-columbia-soft: rgba(117, 178, 221, 0.18);
+
+  --color-navy: #0D234C;                /* Cheer DC Deep Athletic Navy */
+  --color-navy-dark: #081630;
+  --color-navy-light: #16366F;
+  --color-navy-soft: rgba(13, 35, 76, 0.08);
+
+  /* Primary Canvas & Background */
+  --color-bg: #75B2DD;                  /* Background is Columbia Blue */
+  --color-surface: #FFFFFF;             /* Crisp White Athletic Cards */
+  --color-surface-elevated: #F5F9FD;    /* Soft Ice Blue / Elevated Surface */
+  --color-border: #C8DCED;              /* Clean Blue-Gray Border */
+  --color-border-subtle: #E2EEF8;
+
+  /* Typography Colors */
+  --color-text-main: #0A1C38;           /* High-Contrast Deep Navy Text */
+  --color-text-muted: #4B6382;          /* Slate Navy Secondary Text */
+  --color-text-inverse: #FFFFFF;        /* White Text on Navy Surfaces */
+  --color-accent: #0D234C;              /* Primary Action Color: Deep Navy */
+
+  /* Gradients */
+  --pride-gradient: linear-gradient(90deg, #E40303 0%, #FF8C00 20%, #FFED00 40%, #008026 60%, #004DFF 80%, #750787 100%);
+  --navy-gradient: linear-gradient(135deg, #0D234C 0%, #173872 100%);
+  --columbia-gradient: linear-gradient(135deg, #75B2DD 0%, #9CD5F8 50%, #5B9EC9 100%);
+
+  /* Typography Stacks */
+  --font-title: 'Cornero', 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+
+  /* Geometry & Shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(13, 35, 76, 0.08);
+  --shadow-md: 0 4px 14px rgba(13, 35, 76, 0.12);
+  --shadow-lg: 0 10px 28px -4px rgba(13, 35, 76, 0.18);
+
+  --container-max: 980px;
+  --header-height: 70px;
+  --bottom-nav-height: 64px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.22) 0%, transparent 65%),
+    linear-gradient(180deg, #81BAE2 0%, #75B2DD 100%);
+  background-attachment: fixed;
+  color: var(--color-text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--bottom-nav-height);
+}
+
+@media (min-width: 860px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Pride Accent Ribbon
+   -------------------------------------------------------------------------- */
+.pride-stripe {
+  height: 4px;
+  width: 100%;
+  background: var(--pride-gradient);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation (Deep Cheer DC Navy Bar)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 4px;
+  z-index: 90;
+  background-color: rgba(13, 35, 76, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(8, 22, 48, 0.25);
+}
+
+.header-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-logo-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  border: 2px solid var(--color-columbia-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.brand-logo-badge svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-navy);
+}
+
+.brand-text h1 {
+  font-family: var(--font-title);
+  font-size: 1.65rem;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.badge-pill {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: var(--color-columbia-blue);
+  color: var(--color-navy);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.brand-text p {
+  font-size: 0.725rem;
+  color: #B8CCE4;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (min-width: 860px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+.nav-link {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #C5D9F0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+  color: #FFFFFF;
+  background-color: var(--color-columbia-blue);
+  color: var(--color-navy);
+  border-color: var(--color-columbia-blue);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   5. Main Content Area
+   -------------------------------------------------------------------------- */
+.main-wrapper {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3.5rem 1.25rem;
+  width: 100%;
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Controls Card (Search Bar & Filter Pills)
+   -------------------------------------------------------------------------- */
+.vault-controls-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(13, 35, 76, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Search Bar */
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input-wrapper svg {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #557294;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--color-surface-elevated);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-main);
+  padding: 0.7rem 1rem 0.7rem 2.65rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #6C86A5;
+}
+
+.search-input:focus {
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 3px rgba(13, 35, 76, 0.15);
+  background: #FFFFFF;
+}
+
+/* Category Filter Pills */
+.category-pills-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scrollbar-width: thin;
+}
+
+.pill-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #BED2E5;
+  color: var(--color-navy);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.pill-btn:hover {
+  background: var(--color-surface-elevated);
+  border-color: var(--color-navy);
+}
+
+.pill-btn.active {
+  background: var(--color-navy);
+  color: #FFFFFF;
+  border-color: var(--color-navy);
+  box-shadow: 0 2px 8px rgba(13, 35, 76, 0.25);
+}
+
+/* Results Meta Bar */
+.results-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
+  padding: 0.15rem 0.35rem 0.85rem 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.slowmo-tip {
+  color: var(--color-navy);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(13, 35, 76, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   7. Reference List Sections & Tables
+   -------------------------------------------------------------------------- */
+.reference-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.list-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Big Title with Cornero Font */
+.list-section-title {
+  font-family: var(--font-title);
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.list-section-title svg {
+  color: var(--color-navy);
+}
+
+.list-section-count {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-navy);
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 35, 76, 0.2);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.list-items-table {
+  background: var(--color-surface);
+  border: 1px solid rgba(13, 35, 76, 0.16);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+/* Individual Clean Item Row */
+.list-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.35rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background-color 0.15s ease, border-left-color 0.15s ease;
+  border-left: 4px solid transparent;
+}
+
+.list-item-row:last-child {
+  border-bottom: none;
+}
+
+.list-item-row:hover {
+  background-color: var(--color-surface-elevated);
+  border-left-color: var(--color-navy);
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.item-title {
+  font-size: 1.025rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.01em;
+}
+
+.item-detail {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* Action Buttons */
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.825rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  min-height: 38px;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(13, 35, 76, 0.25);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 35, 76, 0.35);
+}
+
+.btn-outline {
+  background: var(--color-surface-elevated);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-navy);
+}
+
+.btn-outline:hover {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  color: #FFFFFF;
+}
+
+@media (max-width: 580px) {
+  .list-item-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.15rem;
+  }
+  
+  .item-actions {
+    width: 100%;
+  }
+
+  .item-actions .btn-primary {
+    flex: 1;
+  }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 2px dashed rgba(13, 35, 76, 0.2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-state h3 {
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.empty-section-hint {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  background: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   8. Video Player Modal
+   -------------------------------------------------------------------------- */
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 22, 48, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.video-modal-backdrop.open {
+  display: flex;
+  opacity: 1;
+}
+
+.video-modal-dialog {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 35, 76, 0.2);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 820px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(8, 22, 48, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-modal-header {
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.category-badge-pill {
+  font-size: 0.675rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(13, 35, 76, 0.08);
+  color: var(--color-navy);
+  border: 1px solid rgba(13, 35, 76, 0.16);
+}
+
+/* Modal Title with Cornero Font */
+.video-modal-header h3 {
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  line-height: 1.1;
+}
+
+.close-modal-btn {
+  background: var(--color-surface-elevated);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-navy);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.close-modal-btn:hover {
+  color: #FFFFFF;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.video-player-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+}
+
+.video-player-container iframe,
+.video-player-container video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Stunt Counts & Text Display in Modal */
+.modal-text-container {
+  background: var(--color-surface-elevated);
+  padding: 1.5rem 1.25rem 2.5rem 1.25rem;
+  max-height: 72vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-text-display {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+  font-weight: normal;
+  color: var(--color-navy);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+  -webkit-user-select: text;
+  text-transform: uppercase;
+  background: #FFFFFF;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 580px;
+  text-align: left;
+}
+
+.video-playback-controls {
+  background: var(--color-surface-elevated);
+  border-top: 1px solid var(--color-border);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.playback-label {
+  font-size: 0.775rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+}
+
+.speed-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.speed-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #BED2E5;
+  color: var(--color-navy);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.775rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.speed-btn:hover {
+  border-color: var(--color-navy);
+  background: var(--color-surface-elevated);
+}
+
+.speed-btn.active {
+  background: var(--color-navy);
+  color: #FFFFFF;
+  border-color: var(--color-navy);
+  box-shadow: 0 2px 6px rgba(13, 35, 76, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   9. Mobile Bottom Navigation
+   -------------------------------------------------------------------------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  background: rgba(13, 35, 76, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 95;
+  box-shadow: 0 -4px 16px rgba(8, 22, 48, 0.25);
+}
+
+@media (min-width: 860px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.bottom-nav-item {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #B8CCE4;
+  font-size: 0.675rem;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  transition: color 0.15s ease;
+  min-width: 50px;
+}
+
+.bottom-nav-item svg {
+  width: 18px;
+  height: 18px;
+}
+
+.bottom-nav-item.active,
+.bottom-nav-item:hover {
+  color: var(--color-columbia-light);
+}
+
+/* --------------------------------------------------------------------------
+   10. Site Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--color-navy-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.25rem 1.25rem 1.5rem 1.25rem;
+  color: #B8CCE4;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-tagline {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social-links a {
+  color: #B8CCE4;
+  transition: color 0.15s ease;
+}
+
+.footer-social-links a:hover {
+  color: var(--color-columbia-blue);
+}

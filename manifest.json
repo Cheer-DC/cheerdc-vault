@@ -1,0 +1,16 @@
+{
+  "name": "Cheer DC Member Portal",
+  "short_name": "Cheer DC",
+  "description": "Cheer DC Member Reference Hub and Video Vault",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#081324",
+  "theme_color": "#75B2DD",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>📣</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
