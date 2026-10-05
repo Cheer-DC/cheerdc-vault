@@ -40,19 +40,19 @@ const CHEER_DC_DATA = {
         {
           id: "cheer-pride",
           title: "P-R-I-D-E Cheer",
-          detail: "P-R-I-D-E crowd chant, words cadence, and motion timing",
+          detail: "Note: video is NOT mirrored",
           videoUrl: "https://youtube.com/shorts/FS0aFz2IfN8?feature=share"
         },
         {
           id: "cheer-cheerdc-capital-pride",
           title: "C-H-E-E-R D-C, Capital Pride for you and me",
-          detail: "Spelling chant cadence with sharp letter motions and team clean hit",
+          detail: "",
           videoUrl: "https://youtube.com/shorts/gthv2qwlTxU?feature=share"
         },
         {
           id: "cheer-who-are-we-dc",
           title: "Who are we? D C",
-          detail: "Cheer DC response chant cadence and motion timing",
+          detail: "",
           videoUrl: "https://youtube.com/shorts/X1uGRcfS3OE?feature=share"
         }
       ]
@@ -65,13 +65,13 @@ const CHEER_DC_DATA = {
         {
           id: "dance-z",
           title: "\"Z\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          detail: "1 8-count dance with front row and back row",
           videoUrl: "https://youtube.com/shorts/q2WVd0AbmdE?feature=share"
         },
         {
           id: "dance-toes",
           title: "\"Toes\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          detail: "1 8-count dance, no ripples, no rows",
           videoUrl: "https://youtube.com/shorts/LNrEjpLkx9E?feature=share"
         }
       ]
@@ -84,7 +84,7 @@ const CHEER_DC_DATA = {
         {
           id: "stunt-drill-counts",
           title: "DRILL COUNTS - Everything on One",
-          detail: "Stunt warm-up progressions, cadence counts, and called cues",
+          detail: "Use for warm up progressions: Load-in drill, Dip drill, Stand drill, Show 'n Go, Prep, Extension (CUPIE)",
           text: `DRILL COUNTS - Everything on One
 1 | 
 2 | 
