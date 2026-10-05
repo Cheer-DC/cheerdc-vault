@@ -13,8 +13,8 @@
 const CHEER_DC_DATA = {
   teamInfo: {
     name: "Cheer DC",
-    title: "Member Reference Vault",
-    tagline: "Washington D.C.'s All-Volunteer LGBTQ+ & Ally Cheerleading Team",
+    title: "Material Reference Vault",
+    tagline: "",
     season: "2026 - 2027 Season"
   },
 
