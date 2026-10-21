@@ -54,7 +54,13 @@ const CHEER_DC_DATA = {
           title: "Who are we? D C",
           detail: "",
           videoUrl: "https://youtube.com/shorts/X1uGRcfS3OE?feature=share"
-        }
+        },
+        {
+       id: "cheer-dc-get-loud",
+       title: "DC Get Loud",
+       detail: "one person calls 1st time, everyone joins in for 2nd, 3rd, and 4th time -> then \"Go DC, Go DC, Go!\" is front row (Brittney) and back row (Eric) -> hit high V legs pop out on the downbeat following the last \"Go!\"",
+       videoUrl: "https://youtube.com/shorts/8DMbvZiTZV8?feature=share"
+     }
       ]
     },
     {
