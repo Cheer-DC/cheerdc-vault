@@ -40,19 +40,19 @@ const CHEER_DC_DATA = {
         {
           id: "cheer-pride",
           title: "P-R-I-D-E Cheer",
-          detail: "",
+          detail: "P-R-I-D-E crowd chant, words cadence, and motion timing",
           videoUrl: "https://youtube.com/shorts/FS0aFz2IfN8?feature=share"
         },
         {
           id: "cheer-cheerdc-capital-pride",
           title: "C-H-E-E-R D-C, Capital Pride for you and me",
-          detail: "",
+          detail: "Spelling chant cadence with sharp letter motions and team clean hit",
           videoUrl: "https://youtube.com/shorts/gthv2qwlTxU?feature=share"
         },
         {
           id: "cheer-who-are-we-dc",
           title: "Who are we? D C",
-          detail: "",
+          detail: "Cheer DC response chant cadence and motion timing",
           videoUrl: "https://youtube.com/shorts/X1uGRcfS3OE?feature=share"
         },
         {
