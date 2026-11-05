@@ -56,11 +56,11 @@ const CHEER_DC_DATA = {
           videoUrl: "https://youtube.com/shorts/X1uGRcfS3OE?feature=share"
         },
         {
-       id: "cheer-dc-get-loud",
-       title: "DC Get Loud",
-       detail: "one person calls 1st time, everyone joins in for 2nd, 3rd, and 4th time -> then \"Go DC, Go DC, Go!\" is front row (Brittney) and back row (Eric) -> hit high V legs pop out on the downbeat following the last \"Go!\"",
-       videoUrl: "https://youtube.com/shorts/cTslHVs_5c0"
-     }
+          id: "cheer-dc-get-loud",
+          title: "DC Get Loud",
+          detail: "one person calls 1st time, everyone joins in for 2nd, 3rd, and 4th time -> then \"Go DC, Go DC, Go!\" is front row (Brittney) and back row (Eric) -> hit high V legs pop out on the downbeat following the last \"Go!\"",
+          videoUrl: "https://youtube.com/shorts/cTslHVs_5c0"
+        }
       ]
     },
     {
@@ -79,6 +79,30 @@ const CHEER_DC_DATA = {
           title: "\"Toes\" - 1 8ct Dance",
           detail: "1 8-count dance, no ripples, no rows",
           videoUrl: "https://youtube.com/shorts/LNrEjpLkx9E?feature=share"
+        },
+        {
+          id: "dance-pump",
+          title: "\"Pump\" - 1 8ct Dance",
+          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          videoUrl: "https://youtube.com/shorts/5lhTVypJYsQ?feature=share"
+        },
+        {
+          id: "dance-barbie",
+          title: "\"Barbie\" - 2 8ct Dance",
+          detail: "2 8-count dance tutorial breakdown with timing and motion counts",
+          videoUrl: "https://youtube.com/shorts/HL2IsLRu9tw?feature=share"
+        },
+        {
+          id: "dance-werk",
+          title: "\"Werk\" - 1 8ct Dance",
+          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          videoUrl: "https://youtube.com/shorts/5NyzW3tRNbU?feature=share"
+        },
+        {
+          id: "dance-hold-em",
+          title: "\"Hold 'Em\" - 2 8ct Dance",
+          detail: "2 8-count dance tutorial breakdown with timing and motion counts",
+          videoUrl: "https://youtube.com/shorts/XeSufeyvdyg?feature=share"
         }
       ]
     },
