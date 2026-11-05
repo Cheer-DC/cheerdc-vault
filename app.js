@@ -283,9 +283,13 @@ function initModal() {
     
     // Stop video / remove source
     const target = document.getElementById('modal-video-target');
+    const dialog = backdrop.querySelector('.video-modal-dialog');
     if (target) {
       target.innerHTML = '';
       target.className = 'video-player-container';
+    }
+    if (dialog) {
+      dialog.classList.remove('is-vertical-modal');
     }
     currentVideoElement = null;
     currentIframeElement = null;
@@ -337,11 +341,14 @@ function openModal(item, section) {
     badgeEl.textContent = section.title;
   }
 
+  const dialog = backdrop.querySelector('.video-modal-dialog');
+
   // Check if item is text-based (e.g. Stunt Counts) or video-based
   if (item.text) {
     // Hide video-specific controls
     if (externalLinkEl) externalLinkEl.style.display = 'none';
     if (playbackControls) playbackControls.style.display = 'none';
+    if (dialog) dialog.classList.remove('is-vertical-modal');
 
     // Render Text Card inside Modal with Cornero styling
     target.className = 'modal-text-container';
@@ -366,11 +373,18 @@ function openModal(item, section) {
       });
     }
 
-    target.className = 'video-player-container';
-
-    // Embed video based on URL
+    // Embed video based on URL and aspect ratio (default 9:16 for Shorts)
     let embedHtml = '';
     const url = item.videoUrl || '';
+    const isVertical = item.aspect === '9:16' ||
+      (item.aspect !== '16:9' && (url.includes('/shorts/') || !url.includes('watch?v=')));
+
+    target.className = isVertical
+      ? 'video-player-container is-vertical'
+      : 'video-player-container';
+    if (dialog) {
+      dialog.classList.toggle('is-vertical-modal', isVertical);
+    }
 
     if (url.endsWith('.mp4') || url.endsWith('.webm')) {
       embedHtml = `
