@@ -13,8 +13,8 @@
 const CHEER_DC_DATA = {
   teamInfo: {
     name: "Cheer DC",
-    title: "Member Reference Vault",
-    tagline: "Washington D.C.'s All-Volunteer LGBTQ+ & Ally Cheerleading Team",
+    title: "Material Reference Vault",
+    tagline: "",
     season: "2026 - 2027 Season"
   },
 
@@ -40,27 +40,27 @@ const CHEER_DC_DATA = {
         {
           id: "cheer-pride",
           title: "P-R-I-D-E Cheer",
-          detail: "P-R-I-D-E crowd chant, words cadence, and motion timing",
+          detail: "Note: video is NOT mirrored",
           videoUrl: "https://youtube.com/shorts/FS0aFz2IfN8?feature=share"
         },
         {
           id: "cheer-cheerdc-capital-pride",
           title: "C-H-E-E-R D-C, Capital Pride for you and me",
-          detail: "Spelling chant cadence with sharp letter motions and team clean hit",
+          detail: "",
           videoUrl: "https://youtube.com/shorts/gthv2qwlTxU?feature=share"
         },
         {
           id: "cheer-who-are-we-dc",
           title: "Who are we? D C",
-          detail: "Cheer DC response chant cadence and motion timing",
+          detail: "",
           videoUrl: "https://youtube.com/shorts/X1uGRcfS3OE?feature=share"
         },
         {
-          id: "cheer-dc-get-loud",
-          title: "DC Get Loud",
-          detail: "one person calls 1st time, everyone joins in for 2nd, 3rd, and 4th time -> then \"Go DC, Go DC, Go!\" is front row (Brittney) and back row (Eric) -> hit high V legs pop out on the downbeat following the last \"Go!\"",
-          videoUrl: "https://youtube.com/shorts/8DMbvZiTZV8?feature=share"
-        }
+       id: "cheer-dc-get-loud",
+       title: "DC Get Loud",
+       detail: "one person calls 1st time, everyone joins in for 2nd, 3rd, and 4th time -> then \"Go DC, Go DC, Go!\" is front row (Brittney) and back row (Eric) -> hit high V legs pop out on the downbeat following the last \"Go!\"",
+       videoUrl: "https://youtube.com/shorts/cTslHVs_5c0"
+     }
       ]
     },
     {
@@ -71,38 +71,14 @@ const CHEER_DC_DATA = {
         {
           id: "dance-z",
           title: "\"Z\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          detail: "1 8-count dance with front row and back row",
           videoUrl: "https://youtube.com/shorts/q2WVd0AbmdE?feature=share"
         },
         {
           id: "dance-toes",
           title: "\"Toes\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
+          detail: "1 8-count dance, no ripples, no rows",
           videoUrl: "https://youtube.com/shorts/LNrEjpLkx9E?feature=share"
-        },
-        {
-          id: "dance-pump",
-          title: "\"Pump\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
-          videoUrl: "https://youtube.com/shorts/5lhTVypJYsQ?feature=share"
-        },
-        {
-          id: "dance-barbie",
-          title: "\"Barbie\" - 2 8ct Dance",
-          detail: "2 8-count dance tutorial breakdown with timing and motion counts",
-          videoUrl: "https://youtube.com/shorts/HL2IsLRu9tw?feature=share"
-        },
-        {
-          id: "dance-werk",
-          title: "\"Werk\" - 1 8ct Dance",
-          detail: "1 8-count dance tutorial breakdown with timing and motion counts",
-          videoUrl: "https://youtube.com/shorts/5NyzW3tRNbU?feature=share"
-        },
-        {
-          id: "dance-hold-em",
-          title: "\"Hold 'Em\" - 2 8ct Dance",
-          detail: "2 8-count dance tutorial breakdown with timing and motion counts",
-          videoUrl: "https://youtube.com/shorts/XeSufeyvdyg?feature=share"
         }
       ]
     },
@@ -114,7 +90,7 @@ const CHEER_DC_DATA = {
         {
           id: "stunt-drill-counts",
           title: "DRILL COUNTS - Everything on One",
-          detail: "Stunt warm-up progressions, cadence counts, and called cues",
+          detail: "Use for warm up progressions: Load-in drill, Dip drill, Stand drill, Show 'n Go, Prep, Extension (CUPIE)",
           text: `DRILL COUNTS - Everything on One
 1 | 
 2 | 
