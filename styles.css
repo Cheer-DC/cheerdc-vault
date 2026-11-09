@@ -263,6 +263,63 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
+   5b. Mission & Vision Top Banner
+   -------------------------------------------------------------------------- */
+.mission-vision-banner {
+  background: var(--color-surface);
+  border: 1px solid rgba(13, 35, 76, 0.16);
+  border-left: 5px solid var(--color-navy);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.15rem;
+  box-shadow: var(--shadow-md);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 680px) {
+  .mission-vision-grid {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .mission-vision-block + .mission-vision-block {
+    border-left: 1.5px solid var(--color-border-subtle);
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 679px) {
+  .mission-vision-block + .mission-vision-block {
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: 0.85rem;
+  }
+}
+
+.mission-vision-heading {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+
+.mission-vision-text {
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
    6. Controls Card (Search Bar & Filter Pills)
    -------------------------------------------------------------------------- */
 .vault-controls-card {
